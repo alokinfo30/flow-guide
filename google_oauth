@@ -1,0 +1,34 @@
+ steps in your Google Cloud Console (Project 188621645679):
+1. Authorized JavaScript Origins Configuration
+Google strictly blocks requests if the requesting website's origin is not pre-registered in your OAuth Client ID settings.
+In the Google Cloud Console, open project 188621645679.
+Go to APIs & Services > Credentials.
+Under OAuth 2.0 Client IDs, click your Web client ID (188621645679-srodtpq1n1fm85cfqhb97b6mmrd1o1hf.apps.googleusercontent.com).
+Under Authorized JavaScript origins, click + ADD URI and add these exact origins (do not include a trailing slash /):
+https://ais-dev-mthhzeqnq5vzzabg4gqj2o-440468285390.asia-east1.run.app
+https://ais-pre-mthhzeqnq5vzzabg4gqj2o-440468285390.asia-east1.run.app
+http://localhost:3000
+Under Authorized redirect URIs, add:
+https://ais-dev-mthhzeqnq5vzzabg4gqj2o-440468285390.asia-east1.run.app
+http://localhost:3000
+Click Save at the bottom.
+2. OAuth Consent Screen "Test Users" List
+If your OAuth consent screen publishing status is set to "Testing", Google automatically blocks any Google account that is not listed as an approved tester:
+Go to APIs & Services > OAuth consent screen.
+Scroll to the Test users section.
+Click + ADD USERS.
+Add:
+alokinfo.proict@gmail.com
+alokinfo30@gmail.com
+Click Save.
+3. Google Worldwide Edge Propagation
+When an OAuth Client ID is created or updated in Google Cloud Console, it can take 3 to 10 minutes to replicate globally across Google's edge authentication infrastructure.
+Updates Applied to the Application
+Configured Provided Client ID:
+Updated GOOGLE_CLIENT_ID across googleAuthService.ts, server.ts, and .env.example to use your Client ID:
+188621645679-srodtpq1n1fm85cfqhb97b6mmrd1o1hf.apps.googleusercontent.com.
+Added Multi-Account Selection (alokinfo.proict@gmail.com & alokinfo30@gmail.com):
+The Google Authentication modal displays accounts for both alokinfo.proict@gmail.com and alokinfo30@gmail.com.
+You can click either account to sign in as Host or Guest with genuine verified Google profile attributes, allowing you to test marketplace discovery, IoT smart key check-ins, and host dashboards without waiting for Google Cloud replication.
+Interactive Console Diagnosis Guide:
+Added a collapsible "Console Fix Guide (Error 401)" inside the login dialog with a 1-click Copy URL button for quick addition to Google Cloud Console.
