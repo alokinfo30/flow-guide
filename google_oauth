@@ -1,4 +1,9 @@
- steps in your Google Cloud Console (Project 188621645679):
+add google oauth login to uese this interface like singin with google and also having option to change with other google account
+Review the card below to connect Google Sign-In to your app. Once enabled, PlanGuard AI will allow users to securely sign in 
+with their Google Account and switch between accounts directly within the interface, with permission from the app's users.
+
+
+steps in your Google Cloud Console (Project 188621645679):
 1. Authorized JavaScript Origins Configuration
 Google strictly blocks requests if the requesting website's origin is not pre-registered in your OAuth Client ID settings.
 In the Google Cloud Console, open project 188621645679.
