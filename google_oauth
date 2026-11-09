@@ -53,3 +53,11 @@ Local Testing & Multi-Account Selection
 Interactive Console Diagnosis Guide
 
 • An integrated, collapsible "Console Fix Guide (Error 401)" is available inside the application's login dialog. It features a 1-click Copy URL button to quickly copy the current application origin for easy addition to the Google Cloud Console.
+
+
+ Implement a single-instance guard (ensureGsiInitialized with isGsiIdInitialized = true) so that google.accounts.id.initialize() is called only once, eliminating the duplicate initialization warning.
+
+Replace  timeout with a generous 3-minute (180,000ms) safety window, allowing adequate time to select an account and authenticate.
+Pre-initialized TokenClient on page load so Google's OAuth popup launches synchronously on click without browser popup-blocker delays.
+Delegate error_callback to distinguish explicit popup closures (popup_closed) and browser popup blocks (popup_failed_to_open) with clear user feedback.
+The currently logged-in user profile, avatar, email, and candidate verification status are parsed dynamically from the Google Identity Services OAuth 2.0 session (userInfoRes.json()). When unauthenticated, user details are suppressed and generic visitor options ("Sign in with Google") are shown.
