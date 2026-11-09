@@ -1,5 +1,5 @@
-add google oauth login to uese this interface like singin with google and also having option to change with other google account
-Review the card below to connect Google Sign-In to your app. Once enabled, PlanGuard AI will allow users to securely sign in 
+integrate google oauth login to uese this interface like singin with google and also having option to change with other google account
+Review the card below to connect Google Sign-In to your app. Once enabled, website will allow users to securely sign in 
 with their Google Account and switch between accounts directly within the interface, with permission from the app's users.
 
 
